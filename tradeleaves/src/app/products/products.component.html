@@ -1,0 +1,118 @@
+<section class="position-retative">
+    <div class="products-info">
+        
+        <div class="flex-1"></div>
+        <div class="width-960">
+            <div class="product-head">Showing all products</div>
+            <div class="" *ngFor="let list of productlist | paginate: { itemsPerPage: 4, currentPage: p } "  >
+                
+                <div class="properties-list" (click)="selectedproduct=list">
+                    <div class="">
+                        <img class="product-img" [src]=list.image>
+                    </div>
+                    <div class="product-details">
+                        <div class="product-name">{{list.productName}}</div>
+                        <div class="attribute-list">{{list.attributes.Material}}</div>
+                        <div class="attribute-list">{{list.attributes.Color}}</div>
+                        
+                        <div class="attribute-list deliverytime">
+                            <div class="">
+                                <div class="attribute-list">{{list.attributes.Brand}}</div>
+                                <div class="attribute-list">{{list.minOrders}} pieces  (Min. Order)</div>
+                                <div class="location"><i class="fas fa-map-marker-alt locatio-icon"></i>{{list.location}}</div>
+                            </div>
+                            <div class="">
+                                <div class=" truck-delivery"><i class="fas fa-truck truck-icon"></i>Usually {{list.deliveryTime}}</div>
+                                <div class="attribute-list rating"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+                                    {{list.productRating}}
+                                </div>
+                                <div class="price attribute-list"><span class="price">&#x20B9;</span> {{list.productPrice}} / piece</div>
+                            </div>
+                            
+                            <label></label>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="">
+                        <div class="remove" (click)="removeProduct(list)">Remove product</div>
+                        <div  class="favorite-btn"><i class="far fa-heart heart-icon"></i>Add to favorite</div>
+                        <div class="favorite-btn"><img src="/assets/compare-icon.png" class="compar-icon heart-icon"> Add to compare</div>
+                        <div class="favorite-btn"><i class="fas fa-list heart-icon"></i>Shortlist product</div>
+                        <div class="favorite-btn"><i class="fas fa-cart-plus heart-icon"></i>Add to cart</div>
+                        <div class="favorite-btn"><i class="far fa-question-circle heart-icon"></i>Contact seller</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="flex-1">
+            <div class="add-remove-btn">
+                <button class="add-product" (click)="addproductbtn()">
+                    Add Product
+                </button>
+                <button class="remove-btn" (click)="removeProducts()" >
+                    Remove Products
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-info" [hidden] = "!isShow">
+
+        <div class="product-added-info">
+            <label class="close-icon" (click)="closePopup()"><i class="far fa-times-circle"></i></label>
+            <div class="properties-list product-margin "  *ngIf="selectedproduct"  >
+                
+                <div class="">
+                    <img class="product-img" [src]=selectedproduct.image>
+                </div>
+                <div class="product-details">
+                    <div class="product-name">{{selectedproduct.productName}}</div>
+                    <div class="attribute-list">{{selectedproduct.attributes.Material}}</div>
+                    <div class="attribute-list">{{selectedproduct.attributes.Color}}</div>
+                    
+                    <div class="attribute-list deliverytime">
+                        <div class="">
+                            <div class="attribute-list">{{selectedproduct.attributes.Brand}}</div>
+                            <div class="attribute-list">{{selectedproduct.minOrders}} pieces  (Min. Order)</div>
+                            <div class="location"><i class="fas fa-map-marker-alt locatio-icon"></i>{{selectedproduct.location}}</div>
+                        </div>
+                        <div class="">
+                            <div class="attribute-list truck-delivery"><i class="fas fa-truck truck-icon"></i>Usually {{selectedproduct.deliveryTime}}</div>
+                            <div class="attribute-list rating"><i class="fas fa-star"></i>{{selectedproduct.productRating}}</div>
+                            <div class="price attribute-list"><span class="price">&#x20B9;</span> {{selectedproduct.productPrice}} / piece</div>
+                        </div>
+                        
+                        <label></label>
+                    </div>
+                </div>
+                <div class="update-button">
+                    <button class="update">Update and close</button>
+                </div>
+                
+                <!-- <div class="">
+                    <div class="remove">Remove product</div>
+                    <div  class="favorite-btn"><i class="far fa-heart heart-icon"></i>Add to favorite</div>
+                    <div class="favorite-btn">Add to compare</div>
+                    <div class="favorite-btn"><i class="fas fa-list"></i>Shortlist product</div>
+                    <div class="favorite-btn"><i class="fas fa-cart-plus"></i>Add to cart</div>
+                    <div class="favorite-btn"><i class="far fa-question-circle"></i>Contact seller</div>
+                </div> -->
+    
+            </div>
+        </div>
+
+        
+        
+    </div>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    <!-- <div class="" *ngFor="let product-list of productlist">
+        <div>{{product-list.productName}}</div>
+        <div class="">{{product-list.location}}</div>
+        <div class="">{{product-list.productRating}}</div>
+    </div> -->
+</section>

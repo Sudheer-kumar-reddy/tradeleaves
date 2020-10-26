@@ -1,0 +1,216 @@
+$font-24:24px;
+$font-color:#5D636F;
+.properties-list {
+    // height: 240px;
+    width: 960px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    display: flex;
+    margin: 25px 0px;
+
+}
+.products-info {
+    display: flex;
+}
+.width-960 {
+    width: 960px;
+}
+.flex-1 {
+    flex: 1;
+}
+.product-head {
+    font-size: $font-24;
+    color: #000000;
+    // padding: 20px 0px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 37px;
+    padding-top: 10px;
+    
+}
+.compar-icon {
+    height: 17px;
+}
+// .w-480 {
+//     width: 480px;
+// }
+.product-img {
+    width: 320px;
+    height: 240px;
+    border-radius: 15px;
+    border-color: #EDF0F1;
+}
+.product-name {
+    color: $font-color;
+    font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 15px;
+}
+.product-details {
+    padding: 15px;
+    width: 50%;
+
+}
+@mixin attribute {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+    color: $font-color;
+}
+.attribute-list {
+    @include attribute()
+}
+.location {
+    @include attribute();
+    font-size: 14px;
+    font-weight: 400;
+}
+.deliverytime {
+    display: flex;
+    justify-content: space-between;
+}
+.truck-icon {
+    font-size: 18px;
+    padding-right: 10px;  
+    
+}
+.truck-delivery {
+    @include attribute();
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.price {
+    color: #0E8543 ;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+}
+.rating {
+    color: #FFB800;
+    font-size: 16px;
+}
+.remove {
+    color: #DE4F60;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 12px;
+}
+.favorite-btn {
+    color: #0E8543;
+    border: 1px solid #0E8543;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    padding: 5px 10px;
+    margin: 5px 0px;
+}
+.heart-icon {
+    padding: 0px 8px;
+}
+@mixin add-product-info {
+    font-size: 16px;
+    line-height: 25px;
+    color: #0E8543;
+    padding: 12px 16px;
+    background: rgba(14, 133, 67, 0.1);
+    border: 1px solid #0E8543;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: block;
+    
+} 
+.add-product {
+    @include add-product-info() ;
+    margin-bottom: 15px;
+    
+    
+}
+.remove-btn {
+    @include add-product-info() ;
+    color: #DE4F60;
+    background: rgba(222, 79, 96, 0.1);
+    border: 1px solid #DE4F60;
+}
+.add-remove-btn {
+    padding: 65px 25px;
+}
+
+
+.popup-info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    top: 0;
+    background: rgba(93, 99, 111, 0.7);
+}
+.position-retative {
+    position: relative;
+}
+.product-added-info {
+    position: absolute;
+    content: "";
+    height: 240px;
+    width: 944px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+
+}
+.close-icon {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    font-size: 18px;
+}
+::ng-deep .ngx-pagination {
+    text-align: center;
+
+}
+::ng-deep .pagination-previous {
+    display: none;
+    visibility: hidden;
+}
+::ng-deep .pagination-next a {
+    background: #7DC142;
+    color: #FFFFFF!important;
+}
+::ng-deep .ngx-pagination a:hover {
+    background: #7DC142!important;
+    color: #FFFFFF!important;
+}
+::ng-deep .ngx-pagination .current {
+    background: #F1F1F1!important;
+    color: #5D636F!important;
+}
+.update-button {
+    position: absolute;
+    border: 0;
+    bottom: 10px;
+    right: 0px;
+}
+.update {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    background: #0E8543;
+    padding: 5px 10px;
+    color: #FFFFFF;
+}
+
+.product-margin {
+    margin: 0;
+}
+.locatio-icon {
+    padding-right: 5px;
+}
